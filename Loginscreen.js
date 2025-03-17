@@ -34,7 +34,12 @@ const LoginScreen = () => {
         await AsyncStorage.setItem('userToken', data.token);
         setLoading(false);
         Alert.alert('Success', 'Login Successful!');
-        navigation.replace('Homescreen');
+
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Homescreen' }],
+        });
+
       } else {
         setLoading(false);
         Alert.alert('Error', data.error || 'Invalid credentials');
@@ -47,7 +52,7 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('./assets/splash.png')} style={styles.logo} />
+      <Image source={require('./assets/Group 26.png')} style={styles.logo} />
       <TextInput
         style={styles.input}
         placeholder="Enter your email"
@@ -87,8 +92,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 140,
     marginBottom: 50,
   },
   input: {

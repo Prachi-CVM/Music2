@@ -120,4 +120,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Sign;
+export default Sign
